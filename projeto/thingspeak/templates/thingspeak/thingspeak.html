@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+
+        <title>Projeto com thingspeak</title>
+        <meta charset="utf-8">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+        <script src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+        <script src='https://www.google.com/jsapi'></script> 
+
+       
+    </head>
+
+    <body>
+        <div>
+            <head>
+                <h1>Projeto de IoT</h1>
+            </head>
+            <div>
+                <iframe width="440" height="300" align="center" style="border: 1px solid #cccccc;  " src="https://thingspeak.com/channels/196384/charts/1?bgcolor=%23deffff&color=%23F62020&dynamic=true&results=720&timescale=20&title=Outdoor+Temperature+%28DS18B20%29&type=spline&xaxis=Time&yaxis=Temperature+%5BC%5D">
+                </iframe>
+            </div>
+            <div width="440" height="300">
+                <h1>Temperatura pelo tempo Field 1</h1>
+                <canvas id="field1"></canvas>
+            </div>
+            <div>
+                <h1>Temperatura pelo tempo Field 2</h1>
+                <canvas id="field2"></canvas>
+            </div>
+            <div>
+                <h1>Pressão pelo tempo Field 3</h1>
+                <canvas id="field3"></canvas>
+            </div>
+            <div>
+                <h1>Pressão pelo tempo Field 4</h1>
+                <canvas id="field4"></canvas>
+            </div>
+        </div>
+        <script src="{% static 'js/field01.js' %}"></script>
+        <script src="{% static 'js/field02.js' %}"></script>
+        <script src="{% static 'js/field03.js' %}"></script>
+        <script src="{% static 'js/field04.js' %}"></script>
+        <script src="{% static 'js/onload.js' %}"></script>
+    </body>
+</html>
